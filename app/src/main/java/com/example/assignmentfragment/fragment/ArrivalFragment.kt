@@ -23,11 +23,11 @@ class ArrivalFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var arrivalList=ArrayList<Arrival>()
+        val arrivalList=ArrayList<Arrival>()
         arrivalList.add(Arrival(R.drawable.bag,"Hyde Park N41015","LOUIS VUITTON",4.0,9999999))
         arrivalList.add(Arrival(R.drawable.shirt,"HORNS PINK LONG SLEEVE T SHIRT","Lady Gaga",5.0,72000))
         arrivalList.add(Arrival(R.drawable.iphones12,"Iphone 12","Apple",3.0,600000))
-        var itemAdapter = ArrivalAdapter(arrivalList)
+        val itemAdapter = ArrivalAdapter(arrivalList)
         arrivalRecycler.layoutManager= LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
         arrivalRecycler.adapter = itemAdapter
     }

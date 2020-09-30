@@ -23,12 +23,13 @@ class CountryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-            var countrylist=ArrayList<Country>()
+            val countrylist=ArrayList<Country>()
             countrylist.add(Country(R.drawable.japan,"Japan"))
             countrylist.add(Country(R.drawable.korea,"Korea"))
             countrylist.add(Country(R.drawable.china,"China"))
             countrylist.add(Country(R.drawable.international,"International"))
-            var countryadapter= CountryAdapter(countrylist)
+
+            val countryadapter= CountryAdapter(countrylist)
             countryRecycler.layoutManager= GridLayoutManager(context,2)
             countryRecycler.adapter=countryadapter
         }

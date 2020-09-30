@@ -1,37 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#D8C3A4">
+    android:background="#E4D6BF"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
 
-    <fragment
-        android:id="@+id/fragmentOne"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="com.example.assignmentfragment.fragment.ArrivalFragment"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
-    <fragment
-        android:id="@+id/fragmentTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="6dp"
-        android:name="com.example.assignmentfragment.fragment.CountryFragment"
-        app:layout_constraintTop_toBottomOf="@id/fragmentOne"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
-    <fragment
-        android:id="@+id/fragmentThree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/fragmentTwo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:name="com.example.assignmentfragment.fragment.ProductFragment"
-        />
+        android:layout_height="match_parent"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/home"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgMenubar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/menubar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <ImageView
+            android:id="@+id/imgSearchIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/searchicon"
+            android:src="@drawable/search"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewCamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            app:cardBackgroundColor="@color/cardview_shadow_end_color"
+            app:layout_constraintTop_toBottomOf="@id/imgSearch"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+            <ImageView
+                android:id="@+id/cameraImg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/camera"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/txtCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera"
+            android:textColor="#eeee"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewCamera"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewCamera"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewCamera"
+            app:layout_constraintVertical_bias=".8"
+
+            />
+        <TextView
+            android:id="@+id/txtCamerabrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Product from Leica Brand"
+            android:textColor="#eeee"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewCamera"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewCamera"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewCamera"
+            app:layout_constraintVertical_bias=".9"
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewImgBrowse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/cardview_shadow_end_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardViewCamera">
+
+        <ImageView
+            android:id="@+id/imgBrowse"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/search_product"
+
+            />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BROWSE BY"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#eeeeee"
+            app:layout_constraintTop_toTopOf="@id/cardViewImgBrowse"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewImgBrowse"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewImgBrowse"
+            app:layout_constraintRight_toRightOf="@id/cardViewImgBrowse"
+            app:layout_constraintVertical_bias=".4"
+            app:layout_constraintHorizontal_bias=".68"
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="Brand"
+            android:textSize="12sp"
+            android:textColor="#eeeeee"
+            android:background="@drawable/text_discount"
+            android:paddingLeft="-22dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewImgBrowse"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewImgBrowse"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewImgBrowse"
+            app:layout_constraintRight_toRightOf="@id/cardViewImgBrowse"
+            app:layout_constraintVertical_bias=".7"
+            app:layout_constraintHorizontal_bias=".7"
+
+            />
+
+        <TextView
+            android:id="@+id/txtLastestAriival"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="| Latest Arrivals"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardViewImgBrowse"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <Button
+            android:layout_width="44dp"
+            android:layout_height="16dp"
+            android:text="view all"
+            android:textAllCaps="false"
+            android:textColor="#eeee"
+            android:textSize="10sp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/text_discount"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardViewImgBrowse"
+
+            />
+
+
+        <fragment
+            android:id="@+id/fragmentOne"
+            android:name="com.example.assignmentfragment.fragment.ArrivalFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLastestAriival" />
+
+
+
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewImgUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/cardview_shadow_end_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragmentOne">
+
+            <ImageView
+                android:id="@+id/imgUpload"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/search_product"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="CAN'T FIND WHAT YOU LOOKING FOR? SEARCH BY?"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#eeeeee"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewImgUpload"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewImgUpload"
+            app:layout_constraintRight_toRightOf="@id/cardViewImgUpload"
+
+            app:layout_constraintHorizontal_bias=".8"
+            />
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="20dp"
+            android:text="Upload picture"
+            android:textSize="12sp"
+            android:textColor="#eeeeee"
+            android:background="@drawable/text_discount"
+
+            android:paddingBottom="2dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewImgUpload"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewImgUpload"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewImgUpload"
+            app:layout_constraintRight_toRightOf="@id/cardViewImgUpload"
+            app:layout_constraintVertical_bias=".8"
+            app:layout_constraintHorizontal_bias=".8"
+
+            />
+
+
+        <TextView
+            android:id="@+id/txtChooseCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="| Choose by Country"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardViewImgUpload"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <fragment
+            android:id="@+id/fragmentTwo"
+            android:name="com.example.assignmentfragment.fragment.CountryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtChooseCountry" />
+
+
+
+
+
+
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/cardview_shadow_end_color"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragmentTwo">
+
+            <ImageView
+                android:id="@+id/imgService"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/service"
+
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEED HELP?"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="@id/cardViewService"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewService"
+            app:layout_constraintRight_toRightOf="@id/cardViewService"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewService"
+            app:layout_constraintVertical_bias=".3"
+            app:layout_constraintHorizontal_bias=".76"
+            />
+        <TextView
+            android:id="@+id/txtService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUSTOMER SERVICE"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewService"
+            app:layout_constraintRight_toRightOf="@id/cardViewService"
+            app:layout_constraintTop_toBottomOf="@id/txtHelp"
+            app:layout_constraintHorizontal_bias=".9"
+            />
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:text="Call now"
+            android:textSize="12sp"
+            android:drawableRight="@drawable/phone"
+            android:textColor="#eeeeee"
+            android:background="@drawable/text_discount"
+            android:paddingRight="5dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintTop_toTopOf="@id/cardViewService"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewService"
+            app:layout_constraintLeft_toLeftOf="@id/cardViewService"
+            app:layout_constraintRight_toRightOf="@id/cardViewService"
+            app:layout_constraintVertical_bias=".8"
+            app:layout_constraintHorizontal_bias=".9"
+
+            />
+
+
+
+
+
+        <TextView
+            android:id="@+id/txtPopularProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="| Popular Products"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardViewService"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+
+
+
+        <fragment
+            android:id="@+id/fragmentThree"
+            android:name="com.example.assignmentfragment.fragment.ProductFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPopularProduct" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
